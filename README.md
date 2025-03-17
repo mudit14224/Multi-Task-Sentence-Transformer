@@ -75,12 +75,12 @@ A Dockerfile is included to containerize the application.
 
 You can find the Docker image on Docker Hub at:
 
-[Docker Hub Link](<your-docker-hub-image-link>)
+[Docker Hub Link](https://hub.docker.com/r/mj14224/multi-task-transformer)
 
 To pull the image:
 
 ```bash
-docker pull <your-dockerhub-username>/multi-task-transformer:latest
+docker pull mj14224/multi-task-transformer
 ```
 
 ### **Note on Using `.to(device)`**  
