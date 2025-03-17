@@ -51,6 +51,7 @@ Execute the `main.py` script:
 
 ```bash
 python main.py
+```
 
 This will run the demonstrations for each task and print the results to the console.
 
