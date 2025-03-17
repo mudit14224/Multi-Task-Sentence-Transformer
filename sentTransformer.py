@@ -125,6 +125,8 @@ class PositionalEncode(nn.Module):
         # Encode the odd indices (cos curve)
         pe[:, 1::2] = torch.cos(position * div_term)
         pe = pe.unsqueeze(0) # Shape: (1, max_len, d_model) (to handle with batch_size)
+        # Register 'pe' as a persistent buffer so it is saved with the model 
+        # but not considered as a trainable parameter
         self.register_buffer('pe', pe)
 
     def forward(self, x):

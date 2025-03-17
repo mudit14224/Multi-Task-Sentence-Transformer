@@ -14,7 +14,7 @@ These Tasks have a Sentence Transformer model as a backbone.
 * `utils.py`: Contains utility functions such as `preprocess_sentences` and `train_model`.
 * `requirements.txt`: Lists the project's dependencies.
 * `Dockerfile`: Defines the Docker image for running the application.
-* `ref/`: Folder which contains the .ipynb notebook.
+* `ref/`: Folder which contains the .ipynb notebook and the writeup for all the tasks. 
 
 ## Tasks
 
