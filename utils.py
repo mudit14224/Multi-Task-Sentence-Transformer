@@ -71,3 +71,16 @@ def train_model(model, optimizer, lf_a, lf_b, inputs, labels_a, labels_b, num_cl
         optimizer.step()
 
         print(f"Epoch {epoch+1}: Loss Task A: {loss_a.item():.4f}, Loss Task B: {loss_b.item():.4f}, Total Loss: {total_loss.item():.4f}")
+
+
+def count_parameters(model):
+    """
+    Calculates the total number of trainable parameters in a given PyTorch model.
+
+    Args:
+        model (torch.nn.Module): The PyTorch model whose parameters need to be counted.
+
+    Returns:
+        int: The total number of trainable parameters in the model.
+    """
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)

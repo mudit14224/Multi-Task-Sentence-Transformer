@@ -5,6 +5,8 @@ This project implements a multi-task learning model based on the Sentence Transf
 * **Task A: Sentence Classification:** Classifying sentences into predefined categories.
 * **Task B: Named Entity Recognition (NER):** Identifying and classifying named entities within sentences.
 
+These Tasks have a Sentence Transformer model as a backbone. 
+
 ## Project Structure
 
 * `main.py`: Contains the main execution logic, including task implementations and training.
@@ -25,8 +27,8 @@ This project implements a multi-task learning model based on the Sentence Transf
 1.  **Clone the Repository:**
 
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-directory>
+    git clone https://github.com/mudit14224/Multi-Task-Sentence-Transformer.git
+    cd Multi-Task-Sentence-Transformer
     ```
 
 2.  **Create and Activate a Virtual Environment (Recommended):**
@@ -42,8 +44,6 @@ This project implements a multi-task learning model based on the Sentence Transf
     ```bash
     pip install -r requirements.txt
     ```
-
-    You can add these lines to the top of your `if __name__ == '__main__':` block in `main.py`.
 
 ## Running the Code
 
@@ -81,3 +81,12 @@ To pull the image:
 
 ```bash
 docker pull <your-dockerhub-username>/multi-task-transformer:latest
+```
+
+### **Note on Using `.to(device)`**  
+
+The `.to(device)` function is used to ensure that the code can **run on a GPU (CUDA or MPS) if available**; otherwise, it falls back to the **CPU**. This is particularly beneficial when dealing with **large models and datasets**, as running computations on a GPU can significantly speed up training and inference.  
+
+However, in our **hypothetical case**, the dataset is **very small**, and the model itself is relatively lightweight. Because of this, the **time taken to transfer tensors to the GPU** is actually **greater** than the time it takes to **run the entire code on the CPU**. As a result, the code **runs faster without sending data to the GPU**.  
+
+Despite this, I have still included `.to(device)` in **all functions** to maintain **good coding practices**. This ensures that if we scale up the model or dataset in the future, the code will be **ready to utilize GPU acceleration efficiently**. 🚀  
